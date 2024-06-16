@@ -1,7 +1,7 @@
 import { useInView } from 'framer-motion';
 import '../App.css';
 import { useEffect, useRef } from 'react';
-import { Learner } from '../assets/learner.svg';
+import  learner  from '../assets/learner.svg';
 
 export const Experience = () => {
 
@@ -30,8 +30,8 @@ export const Experience = () => {
           {/* <svg>
         <use xlinkHref={learner} />
       </svg> */}
-      <Learner className='fill-[#4C4C4C]'/>
-            {/* <img src={learner} alt="" className=' size-10 filter-[#4C4C4C]' /> */}
+      {/* <Learner className='fill-[#4C4C4C]'/> */}
+             <img src={learner} alt="" className=' size-10 filter-[#4C4C4C]' /> 
           </div>
         </div>
       </div>
