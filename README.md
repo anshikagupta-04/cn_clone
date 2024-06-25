@@ -1,6 +1,6 @@
 # Clone of Coding Ninjas
 Introduction
-This repository contains a clone of the Coding Ninjas website. It has been created for educational purposes, allowing users to explore and learn from the structure and functionality of Coding Ninjas.
+This repository contains a UI clone of the Coding Ninjas website. It has been created for educational purposes, allowing users to explore and learn from the structure and functionality of Coding Ninjas.
 
 ## Purpose
 Educational Use: This project is intended for learning and understanding web development techniques used in Coding Ninjas.

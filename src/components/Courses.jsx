@@ -152,7 +152,6 @@ const Courses = () => {
                   <p>500+ hrs of content</p>
                   <p>2500+ questions</p>
                   <p>40+ projects</p>
-
                 </div>
               </div>
             </div>
