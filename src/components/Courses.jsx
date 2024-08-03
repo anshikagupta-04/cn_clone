@@ -76,18 +76,22 @@ const Courses = () => {
 
   const skillslist = [
     {
+      id: 1,
       img: mern,
       name: 'MERN Stack',
     },
     {
+      id: 2,
       img: ai,
       name: 'AI',
     },
     {
+      id: 3,
       img: dsa,
       name: 'DSA',
     },
     {
+      id: 4,
       img: badge,
       name: 'Soft skills',
     }

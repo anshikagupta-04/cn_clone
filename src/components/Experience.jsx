@@ -1,10 +1,12 @@
 import { color, inView, useInView } from 'framer-motion';
 import '../App.css';
 import { useEffect, useRef, useState } from 'react';
+import Video from './Video.jsx';
 import learner from '../assets/learner.svg';
 import placement from '../assets/placement-cell-fill.svg';
 import avg_ctc from '../assets/average-ctc-fill.svg';
 import hike from '../assets/hike.svg';
+import arrow from '../assets/arrow-double-down.svg';
 import whyus from '../assets/why-us2.svg'
 
 export const Experience = () => {
@@ -16,19 +18,19 @@ export const Experience = () => {
   const handleScroll1 = () => {
     const position = window.scrollY
     setScrollPosition1(position - 2950)
-    console.log(position);
+    // console.log(position);
   }
 
   const handleScroll2 = () => {
     const position = window.scrollY
     setScrollPosition2(position - 3500)
-    console.log(position);
+    // console.log(position);
   }
 
   const handleScroll3 = () => {
     const position = window.scrollY
     setScrollPosition3(position - 4000)
-    console.log(position);
+    // console.log(position);
   }
 
   useEffect(() => {
@@ -103,7 +105,7 @@ export const Experience = () => {
         <div className={`absolute top-0 -left-[1px] border-[#3b3b3b] border-l-2 max-h-[220px] `} style={{ height: isInView ? `${data.position}px` : '0px' }}></div>
       </div>
       <div className={`text-center flex flex-col justify-center items-center mb-6 gap-8 ${isInView[data.view] ? 'pt-10' : 'mt-10'}`} ref={data.ref}>
-        <div className={`bg-[${data.color}] h-[103px] w-[103px] rounded-3xl flex justify-center items-center ${isInView[data.view] ? '' : 'bg-[#1f1f1f]'}`}>
+        <div className={` h-[103px] w-[103px] rounded-3xl flex justify-center items-center `} style={{backgroundColor: isInView[data.view] ? `${data.color}` : '#1f1f1f'}}>
           <div className={`h-[103px] w-[103px] rounded-3xl absolute ${isInView[data.view] ? 'w-0 h-0' : 'bg-[#1f1f1fa8]'}`}></div>
           <img src={data.img} alt="" className=' size-10 ' />
         </div>
@@ -122,7 +124,7 @@ export const Experience = () => {
           <h1 className={`font-sans transition-transform ease-in ${isInView[2] ? 'scale-125' : ''} `} ref={myRef3} style={{ color: isInView[2] ? 'white' : '' }}>tech careers</h1>
         </div>
         <div className={`text-center flex flex-col justify-center items-center mb-6 gap-8 ${isInView[3] ? 'pt-32' : 'mt-32'}`} ref={myRef4}>
-          <div className={`bg-[#6249C5] h-[103px] w-[103px] rounded-3xl flex justify-center items-center ${isInView[3] ? '' : 'bg-[#1f1f1f]'}`}>
+          <div className={` h-[103px] w-[103px] rounded-3xl flex justify-center items-center ${isInView[3] ? 'bg-[#6249C5]' : 'bg-[#1f1f1f]'}`}>
             <div className={`h-[103px] w-[103px] rounded-3xl absolute ${isInView[3] ? 'w-0 h-0' : 'bg-[#1f1f1fa8]'}`}></div>
             <img src={learner} alt="" className=' size-10' />
           </div>
@@ -130,7 +132,26 @@ export const Experience = () => {
           <p className={`text-3xl ${isInView[3] ? 'text-[#838485]' : 'text-[#2D2D2D]'}`}>cracked dream roles at top tech companies</p>
         </div>
         {transforming_sec}
-        <img src={whyus} alt="" />
+        <button className='w-52 h-12 bg-[#F66C3B] my-16 rounded-xl flex justify-center gap-3 items-center text-md text-neutral-50 font-bold'>
+          <div>Explore Offerings</div>
+          <img src={arrow} className=' rotate-180' alt="" />
+        </button>
+        <img src={whyus} className='mt-48' alt="" />
+        <div>
+          <div>
+            <video controls src='https://files.codingninjas.com/1-1-doubt-support-with-subtitle-2-33136.mp4' itemType='video/mp4'/>
+            <video src="https://files.codingninjas.com/stanford-iit-maang-faculty-with-subtitle-3-33140.mp4"/>
+            <video src="https://files.codingninjas.com/placement-assistance-with-subtitle-1716376917.mp4"/>
+          </div>
+          <div>
+            <div>
+              <video src='' type=''/>
+              <Video/>
+            </div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
       </div>
     </div>
   )

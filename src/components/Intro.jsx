@@ -1,10 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../App.css'
 import alumni_discount from '../assets/alumni_discount.svg'
 import down_arrow from '../assets/arrow-double-down.svg'
 import video from '../assets/hotstar-8s-promo.mp4'
+import Video from './Video.jsx';
+import play from '../assets/play-button.svg'
+import fullVideo from '../assets/hotstar-promo-full.mp4'
 
 export const Intro = () => {
+    // const videoRef = useRef(null)
+
+    const [ flag, setflag ] = useState(false);
+
+    const changeFlag = () => {
+        setflag(true);
+        console.log(flag);
+    }
+
+    // const playVideo = (() => {
+    //     if (flag) {
+    //         <video controls width="100%" className='rounded-xl'>
+    //             <source src={fullVideo} type="video/mp4" />
+    //             Your browser does not support the video tag.
+    //         </video>
+    //     }
+    //     else{
+    //         <Video src={video} type='video/mp4' />
+    //     }
+    // })
+
     return (
         <div className='main'>
             <div className="main-wraper z-0 relative">
@@ -20,14 +44,18 @@ export const Intro = () => {
                             Explore Courses
                             <img src={down_arrow} />
                         </button>
-                        <div className='w-[100%] rounded-lg my-9'>
-                            <video controls width="100%" className='rounded-xl'> {/*Edit the video player accordingly. Play pause buttons, gif in cover. */}
-                                <source src={video} type="video/mp4" />
+                        <div className='w-[100%] h-auto rounded-lg my-9 relative'>
+                            {flag ? (<video controls width="100%" className='rounded-xl' autoPlay>
+                                <source src={fullVideo} type="video/mp4" />
                                 Your browser does not support the video tag.
-                            </video>
+                            </video>) : (
+                                <Video src={video} type='video/mp4' />
+                            )}
+                            <div className=' w-20 h-20 absolute left-[45%] top-[45%] bg-[#ffffff71] rounded-full flex justify-center items-center' onClick={changeFlag} style={{width : flag? '0' : ''}}>
+                                <img src={play} alt="" />
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
